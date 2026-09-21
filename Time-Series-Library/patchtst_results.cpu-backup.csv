@@ -1,0 +1,5 @@
+model,dataset,seq_len,pred_len,mse,mae
+PatchTST,Weather,96,96,0.175585,0.217611
+PatchTST,Weather,96,192,0.221621,0.255647
+PatchTST,Weather,96,336,0.279586,0.297959
+PatchTST,Weather,96,720,0.356109,0.347722
