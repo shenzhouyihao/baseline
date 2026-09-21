@@ -1,0 +1,17 @@
+model,dataset,seq_len,pred_len,mse,mae
+DLinear,Weather,96,96,0.196220,0.256110
+DLinear,Weather,96,192,0.238932,0.299210
+DLinear,Weather,96,336,0.281053,0.330589
+DLinear,Weather,96,720,0.345357,0.381884
+DLinear,Electricity,96,96,0.210368,0.301550
+DLinear,Electricity,96,192,0.210180,0.304743
+DLinear,Electricity,96,336,0.223107,0.319203
+DLinear,Electricity,96,720,0.257769,0.349646
+DLinear,Exchange,96,96,0.098343,0.232678
+DLinear,Exchange,96,192,0.186059,0.325129
+DLinear,Exchange,96,336,0.327241,0.434654
+DLinear,Exchange,96,720,0.749057,0.663702
+DLinear,Traffic,96,96,0.696544,0.428746
+DLinear,Traffic,96,192,0.646599,0.407414
+DLinear,Traffic,96,336,0.653217,0.409723
+DLinear,Traffic,96,720,0.694009,0.428625

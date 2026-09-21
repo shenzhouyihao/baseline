@@ -1,0 +1,2 @@
+model,dataset,seq_len,pred_len,features,mse,mae,seed,run,timestamp_utc
+TimeMixer,ETTh1,96,96,M,0.381113,0.398769,2021,0,2026-08-12T08:08:46+00:00

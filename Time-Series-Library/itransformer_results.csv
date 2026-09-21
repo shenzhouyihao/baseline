@@ -1,0 +1,17 @@
+model,dataset,seq_len,pred_len,mse,mae
+iTransformer,Weather,96,96,0.175339,0.215906
+iTransformer,Weather,96,192,0.225247,0.257849
+iTransformer,Weather,96,336,0.279667,0.298146
+iTransformer,Weather,96,720,0.361121,0.350979
+iTransformer,Electricity,96,96,0.148457,0.240111
+iTransformer,Electricity,96,192,0.164527,0.256093
+iTransformer,Electricity,96,336,0.177533,0.270388
+iTransformer,Electricity,96,720,0.209380,0.299245
+iTransformer,Exchange,96,96,0.087281,0.208949
+iTransformer,Exchange,96,192,0.176898,0.300120
+iTransformer,Exchange,96,336,0.337739,0.421438
+iTransformer,Exchange,96,720,0.916598,0.723323
+iTransformer,Traffic,96,96,0.391971,0.267983
+iTransformer,Traffic,96,192,0.411978,0.276973
+iTransformer,Traffic,96,336,0.423910,0.282718
+iTransformer,Traffic,96,720,0.460305,0.301504

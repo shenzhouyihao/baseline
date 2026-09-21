@@ -1,0 +1,2 @@
+model,dataset,seq_len,pred_len,features,mse,mae,seed,run,timestamp_utc
+DLinear,ETTh1,96,96,M,0.435588,0.440231,2021,0,2026-08-11T14:27:03+00:00
