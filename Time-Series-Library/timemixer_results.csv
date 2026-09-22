@@ -1,0 +1,17 @@
+model,dataset,seq_len,pred_len,mse,mae
+TimeMixer,Weather,96,96,0.161355,0.208221
+TimeMixer,Weather,96,192,0.207741,0.251399
+TimeMixer,Weather,96,336,0.264268,0.293749
+TimeMixer,Weather,96,720,0.345877,0.345771
+TimeMixer,Electricity,96,96,0.156226,0.247448
+TimeMixer,Electricity,96,192,0.170049,0.260816
+TimeMixer,Electricity,96,336,0.187465,0.278299
+TimeMixer,Electricity,96,720,0.227526,0.312119
+TimeMixer,Exchange,96,96,0.089071,0.206507
+TimeMixer,Exchange,96,192,0.182505,0.302539
+TimeMixer,Exchange,96,336,0.359566,0.435819
+TimeMixer,Exchange,96,720,0.922487,0.723655
+TimeMixer,Traffic,96,96,0.476199,0.296564
+TimeMixer,Traffic,96,192,0.505504,0.301291
+TimeMixer,Traffic,96,336,0.515456,0.307874
+TimeMixer,Traffic,96,720,0.548659,0.322576
