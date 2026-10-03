@@ -1,0 +1,125 @@
+Here are some similar examples from the training set to help you understand the task:
+
+
+Based on these examples, please solve the following similar task:
+
+You are an expert in time series forecasting.
+ The dataset is ETTh1 (Electricity Transformer Temperature Hourly) and contains hourly records of transformer oil temperature (target) and load-related covariates (HUFL, HULL, MUFL, MULL, LUFL, LULL).
+
+**Target Variable to Forecast:**
+Here is the historical data of Oil Temperature (transformer oil temperature, prediction target) (the variable you need to forecast) for the past 96 recorded hours:
+               date    OT
+2020-10-23 23:30:00 435.4
+2020-10-23 23:40:00 436.7
+2020-10-23 23:50:00 438.7
+2020-10-24 00:00:00 438.5
+2020-10-24 00:10:00 433.2
+2020-10-24 00:20:00 429.9
+2020-10-24 00:30:00 429.5
+2020-10-24 00:40:00 428.9
+2020-10-24 00:50:00 431.3
+2020-10-24 01:00:00 431.4
+2020-10-24 01:10:00 432.1
+2020-10-24 01:20:00 435.1
+2020-10-24 01:30:00 435.7
+2020-10-24 01:40:00 432.1
+2020-10-24 01:50:00 429.3
+2020-10-24 02:00:00 427.6
+2020-10-24 02:10:00 427.7
+2020-10-24 02:20:00 429.8
+2020-10-24 02:30:00 438.2
+2020-10-24 02:40:00 440.9
+2020-10-24 02:50:00 437.9
+2020-10-24 03:00:00 430.1
+2020-10-24 03:10:00 431.0
+2020-10-24 03:20:00 430.7
+2020-10-24 03:30:00 431.3
+2020-10-24 03:40:00 437.7
+2020-10-24 03:50:00 437.1
+2020-10-24 04:00:00 432.8
+2020-10-24 04:10:00 437.5
+2020-10-24 04:20:00 434.8
+2020-10-24 04:30:00 432.4
+2020-10-24 04:40:00 435.4
+2020-10-24 04:50:00 432.6
+2020-10-24 05:00:00 433.3
+2020-10-24 05:10:00 438.0
+2020-10-24 05:20:00 442.0
+2020-10-24 05:30:00 435.0
+2020-10-24 05:40:00 432.9
+2020-10-24 05:50:00 438.7
+2020-10-24 06:00:00 455.5
+2020-10-24 06:10:00 462.8
+2020-10-24 06:20:00 456.7
+2020-10-24 06:30:00 455.0
+2020-10-24 06:40:00 456.0
+2020-10-24 06:50:00 452.2
+2020-10-24 07:00:00 457.1
+2020-10-24 07:10:00 463.5
+2020-10-24 07:20:00 465.9
+2020-10-24 07:30:00 464.5
+2020-10-24 07:40:00 464.0
+2020-10-24 07:50:00 461.4
+2020-10-24 08:00:00 460.7
+2020-10-24 08:10:00 459.2
+2020-10-24 08:20:00 458.2
+2020-10-24 08:30:00 457.9
+2020-10-24 08:40:00 455.5
+2020-10-24 08:50:00 454.4
+2020-10-24 09:00:00 453.6
+2020-10-24 09:10:00 453.6
+2020-10-24 09:20:00 450.7
+2020-10-24 09:30:00 446.1
+2020-10-24 09:40:00 440.5
+2020-10-24 09:50:00 428.8
+2020-10-24 10:00:00 420.5
+2020-10-24 10:10:00 419.9
+2020-10-24 10:20:00 419.5
+2020-10-24 10:30:00 419.0
+2020-10-24 10:40:00 418.3
+2020-10-24 10:50:00 418.1
+2020-10-24 11:00:00 417.8
+2020-10-24 11:10:00 417.5
+2020-10-24 11:20:00 417.5
+2020-10-24 11:30:00 417.3
+2020-10-24 11:40:00 417.0
+2020-10-24 11:50:00 417.3
+2020-10-24 12:00:00 417.8
+2020-10-24 12:10:00 418.2
+2020-10-24 12:20:00 418.3
+2020-10-24 12:30:00 418.1
+2020-10-24 12:40:00 417.8
+2020-10-24 12:50:00 417.7
+2020-10-24 13:00:00 417.9
+2020-10-24 13:10:00 417.6
+2020-10-24 13:20:00 417.2
+2020-10-24 13:30:00 416.7
+2020-10-24 13:40:00 416.8
+2020-10-24 13:50:00 416.7
+2020-10-24 14:00:00 416.1
+2020-10-24 14:10:00 415.7
+2020-10-24 14:20:00 415.8
+2020-10-24 14:30:00 415.9
+2020-10-24 14:40:00 416.0
+2020-10-24 14:50:00 416.4
+2020-10-24 15:00:00 416.5
+2020-10-24 15:10:00 416.8
+2020-10-24 15:20:00 416.6
+
+**Statistical Summary (Feature Extraction):**
+- Target OT: {"mean": 433.6802083333334, "std": 15.241531937109555, "min": 415.7, "max": 465.9, "median": 432.1, "trend_slope": -0.2206450081389026, "daily_std_24h": 8.696163630219921, "lag1_corr": 0.9723896796412496, "mean_abs_change": 2.212631578947368, "std_change": 3.589750876779712}
+
+**Task:**
+Based on the historical data above,
+Before forecasting, briefly analyze the experiences and insights from the similar examples above, then produce your forecast., please forecast the target variable (OT) for the next 720 recorded hours. Please note that some data may contain missing values, so handle them carefully. Please provide the complete forecast for the next 720 hours, remember to give me the complete data. You must provide the complete data.You mustn't omit any content.You are not allowed to train any model or call/use any other model, tool, or external resource. You must rely only on your own internal knowledge and logical reasoning to produce the forecastAnd your final answer must follow the format
+    <answer>
+        
+```
+
+        ...
+        
+```
+
+        </answer>
+    Please obey the format strictly. And you must give me the complete answer.
+    

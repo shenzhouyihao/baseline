@@ -1,0 +1,125 @@
+Here are some similar examples from the training set to help you understand the task:
+
+
+Based on these examples, please solve the following similar task:
+
+You are an expert in time series forecasting.
+ The dataset is ETTh1 (Electricity Transformer Temperature Hourly) and contains hourly records of transformer oil temperature (target) and load-related covariates (HUFL, HULL, MUFL, MULL, LUFL, LULL).
+
+**Target Variable to Forecast:**
+Here is the historical data of Oil Temperature (transformer oil temperature, prediction target) (the variable you need to forecast) for the past 96 recorded hours:
+          date       OT
+ 2007/1/6 0:00 0.823791
+ 2007/1/7 0:00 0.822571
+ 2007/1/8 0:00 0.831878
+ 2007/1/9 0:00 0.834620
+2007/1/10 0:00 0.836225
+2007/1/11 0:00 0.836225
+2007/1/12 0:00 0.834620
+2007/1/13 0:00 0.837381
+2007/1/14 0:00 0.835981
+2007/1/15 0:00 0.836715
+2007/1/16 0:00 0.836225
+2007/1/17 0:00 0.837205
+2007/1/18 0:00 0.837205
+2007/1/19 0:00 0.838434
+2007/1/20 0:00 0.841999
+2007/1/21 0:00 0.843811
+2007/1/22 0:00 0.838153
+2007/1/23 0:00 0.842957
+2007/1/24 0:00 0.840619
+2007/1/25 0:00 0.843064
+2007/1/26 0:00 0.845952
+2007/1/27 0:00 0.852115
+2007/1/28 0:00 0.856788
+2007/1/29 0:00 0.863260
+2007/1/30 0:00 0.858001
+2007/1/31 0:00 0.858922
+ 2007/2/1 0:00 0.858848
+ 2007/2/2 0:00 0.845666
+ 2007/2/3 0:00 0.850593
+ 2007/2/4 0:00 0.843917
+ 2007/2/5 0:00 0.842495
+ 2007/2/6 0:00 0.843526
+ 2007/2/7 0:00 0.841928
+ 2007/2/8 0:00 0.841751
+ 2007/2/9 0:00 0.840795
+2007/2/10 0:00 0.840407
+2007/2/11 0:00 0.845988
+2007/2/12 0:00 0.852515
+2007/2/13 0:00 0.849005
+2007/2/14 0:00 0.847925
+2007/2/15 0:00 0.847925
+2007/2/16 0:00 0.856751
+2007/2/17 0:00 0.856898
+2007/2/18 0:00 0.849618
+2007/2/19 0:00 0.849654
+2007/2/20 0:00 0.853898
+2007/2/21 0:00 0.853279
+2007/2/22 0:00 0.853279
+2007/2/23 0:00 0.851644
+2007/2/24 0:00 0.845309
+2007/2/25 0:00 0.838785
+2007/2/26 0:00 0.843241
+2007/2/27 0:00 0.831221
+2007/2/28 0:00 0.830254
+ 2007/3/1 0:00 0.830254
+ 2007/3/2 0:00 0.823757
+ 2007/3/3 0:00 0.819706
+ 2007/3/4 0:00 0.821895
+ 2007/3/5 0:00 0.818398
+ 2007/3/6 0:00 0.807461
+ 2007/3/7 0:00 0.806354
+ 2007/3/8 0:00 0.806354
+ 2007/3/9 0:00 0.816260
+2007/3/10 0:00 0.817595
+2007/3/11 0:00 0.807657
+2007/3/12 0:00 0.814332
+2007/3/13 0:00 0.808309
+2007/3/14 0:00 0.809848
+2007/3/15 0:00 0.809848
+2007/3/16 0:00 0.808407
+2007/3/17 0:00 0.809029
+2007/3/18 0:00 0.812381
+2007/3/19 0:00 0.808211
+2007/3/20 0:00 0.796242
+2007/3/21 0:00 0.810701
+2007/3/22 0:00 0.797416
+2007/3/23 0:00 0.793588
+2007/3/24 0:00 0.802343
+2007/3/25 0:00 0.787247
+2007/3/26 0:00 0.788768
+2007/3/27 0:00 0.788768
+2007/3/28 0:00 0.789858
+2007/3/29 0:00 0.785793
+2007/3/30 0:00 0.798244
+2007/3/31 0:00 0.804182
+ 2007/4/1 0:00 0.805445
+ 2007/4/2 0:00 0.805056
+ 2007/4/3 0:00 0.805056
+ 2007/4/4 0:00 0.799456
+ 2007/4/5 0:00 0.800833
+ 2007/4/6 0:00 0.804182
+ 2007/4/7 0:00 0.774054
+ 2007/4/8 0:00 0.775104
+ 2007/4/9 0:00 0.775795
+2007/4/10 0:00 0.773994
+2007/4/11 0:00 0.778665
+
+**Statistical Summary (Feature Extraction):**
+- Target OT: {"mean": 0.8257153958333333, "std": 0.023560629509522507, "min": 0.773994, "max": 0.86326, "median": 0.83462, "trend_slope": -0.0006701561177428178, "daily_std_24h": 0.009857672262106395, "lag1_corr": 0.9657363724912574, "mean_abs_change": 0.004077305263157891, "std_change": 0.006154261545328585}
+
+**Task:**
+Based on the historical data above,
+Before forecasting, briefly analyze the experiences and insights from the similar examples above, then produce your forecast., please forecast the target variable (OT) for the next 96 recorded hours. Please note that some data may contain missing values, so handle them carefully. Please provide the complete forecast for the next 96 hours, remember to give me the complete data. You must provide the complete data.You mustn't omit any content.You are not allowed to train any model or call/use any other model, tool, or external resource. You must rely only on your own internal knowledge and logical reasoning to produce the forecastAnd your final answer must follow the format
+    <answer>
+        
+```
+
+        ...
+        
+```
+
+        </answer>
+    Please obey the format strictly. And you must give me the complete answer.
+    

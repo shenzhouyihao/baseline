@@ -1,0 +1,125 @@
+Here are some similar examples from the training set to help you understand the task:
+
+
+Based on these examples, please solve the following similar task:
+
+You are an expert in time series forecasting.
+ The dataset is ETTh1 (Electricity Transformer Temperature Hourly) and contains hourly records of transformer oil temperature (target) and load-related covariates (HUFL, HULL, MUFL, MULL, LUFL, LULL).
+
+**Target Variable to Forecast:**
+Here is the historical data of Oil Temperature (transformer oil temperature, prediction target) (the variable you need to forecast) for the past 96 recorded hours:
+          date       OT
+2008/1/25 0:00 0.868093
+2008/1/26 0:00 0.869150
+2008/1/27 0:00 0.869150
+2008/1/28 0:00 0.867679
+2008/1/29 0:00 0.863819
+2008/1/30 0:00 0.861772
+2008/1/31 0:00 0.857817
+ 2008/2/1 0:00 0.857412
+ 2008/2/2 0:00 0.857155
+ 2008/2/3 0:00 0.857155
+ 2008/2/4 0:00 0.855761
+ 2008/2/5 0:00 0.859919
+ 2008/2/6 0:00 0.858222
+ 2008/2/7 0:00 0.856311
+ 2008/2/8 0:00 0.858222
+ 2008/2/9 0:00 0.857596
+2008/2/10 0:00 0.857964
+2008/2/11 0:00 0.853170
+2008/2/12 0:00 0.855542
+2008/2/13 0:00 0.860919
+2008/2/14 0:00 0.862664
+2008/2/15 0:00 0.866664
+2008/2/16 0:00 0.866439
+2008/2/17 0:00 0.866852
+2008/2/18 0:00 0.868357
+2008/2/19 0:00 0.876501
+2008/2/20 0:00 0.867754
+2008/2/21 0:00 0.865202
+2008/2/22 0:00 0.861289
+2008/2/23 0:00 0.861364
+2008/2/24 0:00 0.861364
+2008/2/25 0:00 0.862180
+2008/2/26 0:00 0.863558
+2008/2/27 0:00 0.866889
+2008/2/28 0:00 0.863894
+2008/2/29 0:00 0.863371
+ 2008/3/1 0:00 0.862589
+ 2008/3/2 0:00 0.862776
+ 2008/3/3 0:00 0.863036
+ 2008/3/4 0:00 0.856348
+ 2008/3/5 0:00 0.855103
+ 2008/3/6 0:00 0.855578
+ 2008/3/7 0:00 0.855066
+ 2008/3/8 0:00 0.854920
+ 2008/3/9 0:00 0.854153
+2008/3/10 0:00 0.855359
+2008/3/11 0:00 0.853352
+2008/3/12 0:00 0.848608
+2008/3/13 0:00 0.846024
+2008/3/14 0:00 0.849329
+2008/3/15 0:00 0.849618
+2008/3/16 0:00 0.849618
+2008/3/17 0:00 0.845059
+2008/3/18 0:00 0.842637
+2008/3/19 0:00 0.841361
+2008/3/20 0:00 0.850557
+2008/3/21 0:00 0.850123
+2008/3/22 0:00 0.850051
+2008/3/23 0:00 0.850051
+2008/3/24 0:00 0.848860
+2008/3/25 0:00 0.851100
+2008/3/26 0:00 0.855871
+2008/3/27 0:00 0.867905
+2008/3/28 0:00 0.866476
+2008/3/29 0:00 0.866363
+2008/3/30 0:00 0.866363
+2008/3/31 0:00 0.867227
+ 2008/4/1 0:00 0.865014
+ 2008/4/2 0:00 0.868432
+ 2008/4/3 0:00 0.870777
+ 2008/4/4 0:00 0.869641
+ 2008/4/5 0:00 0.869754
+ 2008/4/6 0:00 0.869754
+ 2008/4/7 0:00 0.871080
+ 2008/4/8 0:00 0.868697
+ 2008/4/9 0:00 0.873248
+2008/4/10 0:00 0.876962
+2008/4/11 0:00 0.876770
+2008/4/12 0:00 0.877732
+2008/4/13 0:00 0.877732
+2008/4/14 0:00 0.875197
+2008/4/15 0:00 0.878002
+2008/4/16 0:00 0.876539
+2008/4/17 0:00 0.875388
+2008/4/18 0:00 0.874317
+2008/4/19 0:00 0.873935
+2008/4/20 0:00 0.873935
+2008/4/21 0:00 0.876463
+2008/4/22 0:00 0.879121
+2008/4/23 0:00 0.880049
+2008/4/24 0:00 0.882379
+2008/4/25 0:00 0.881057
+2008/4/26 0:00 0.881057
+2008/4/27 0:00 0.881057
+2008/4/28 0:00 0.879701
+2008/4/29 0:00 0.876463
+
+**Statistical Summary (Feature Extraction):**
+- Target OT: {"mean": 0.8637385833333333, "std": 0.010016342197323775, "min": 0.841361, "max": 0.882379, "median": 0.8636885000000001, "trend_slope": 0.00017635800325556018, "daily_std_24h": 0.006083062075125526, "lag1_corr": 0.9561677305048166, "mean_abs_change": 0.001999368421052627, "std_change": 0.0029679762251625524}
+
+**Task:**
+Based on the historical data above,
+Before forecasting, briefly analyze the experiences and insights from the similar examples above, then produce your forecast., please forecast the target variable (OT) for the next 96 recorded hours. Please note that some data may contain missing values, so handle them carefully. Please provide the complete forecast for the next 96 hours, remember to give me the complete data. You must provide the complete data.You mustn't omit any content.You are not allowed to train any model or call/use any other model, tool, or external resource. You must rely only on your own internal knowledge and logical reasoning to produce the forecastAnd your final answer must follow the format
+    <answer>
+        
+```
+
+        ...
+        
+```
+
+        </answer>
+    Please obey the format strictly. And you must give me the complete answer.
+    

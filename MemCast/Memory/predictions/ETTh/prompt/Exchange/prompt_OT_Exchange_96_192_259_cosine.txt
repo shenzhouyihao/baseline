@@ -1,0 +1,125 @@
+Here are some similar examples from the training set to help you understand the task:
+
+
+Based on these examples, please solve the following similar task:
+
+You are an expert in time series forecasting.
+ The dataset is ETTh1 (Electricity Transformer Temperature Hourly) and contains hourly records of transformer oil temperature (target) and load-related covariates (HUFL, HULL, MUFL, MULL, LUFL, LULL).
+
+**Target Variable to Forecast:**
+Here is the historical data of Oil Temperature (transformer oil temperature, prediction target) (the variable you need to forecast) for the past 96 recorded hours:
+           date       OT
+ 2007/7/17 0:00 0.827198
+ 2007/7/18 0:00 0.826720
+ 2007/7/19 0:00 0.830082
+ 2007/7/20 0:00 0.832743
+ 2007/7/21 0:00 0.831635
+ 2007/7/22 0:00 0.831635
+ 2007/7/23 0:00 0.832952
+ 2007/7/24 0:00 0.829325
+ 2007/7/25 0:00 0.828981
+ 2007/7/26 0:00 0.829256
+ 2007/7/27 0:00 0.832743
+ 2007/7/28 0:00 0.832258
+ 2007/7/29 0:00 0.832258
+ 2007/7/30 0:00 0.836610
+ 2007/7/31 0:00 0.836645
+  2007/8/1 0:00 0.841468
+  2007/8/2 0:00 0.850847
+  2007/8/3 0:00 0.849545
+  2007/8/4 0:00 0.850232
+  2007/8/5 0:00 0.850232
+  2007/8/6 0:00 0.846704
+  2007/8/7 0:00 0.851716
+  2007/8/8 0:00 0.838188
+  2007/8/9 0:00 0.834934
+ 2007/8/10 0:00 0.828157
+ 2007/8/11 0:00 0.827952
+ 2007/8/12 0:00 0.827952
+ 2007/8/13 0:00 0.829050
+ 2007/8/14 0:00 0.824674
+ 2007/8/15 0:00 0.825866
+ 2007/8/16 0:00 0.826310
+ 2007/8/17 0:00 0.822842
+ 2007/8/18 0:00 0.826856
+ 2007/8/19 0:00 0.826856
+ 2007/8/20 0:00 0.828363
+ 2007/8/21 0:00 0.830151
+ 2007/8/22 0:00 0.838504
+ 2007/8/23 0:00 0.833959
+ 2007/8/24 0:00 0.825014
+ 2007/8/25 0:00 0.825287
+ 2007/8/26 0:00 0.824742
+ 2007/8/27 0:00 0.823418
+ 2007/8/28 0:00 0.821963
+ 2007/8/29 0:00 0.825968
+ 2007/8/30 0:00 0.827952
+ 2007/8/31 0:00 0.832466
+  2007/9/1 0:00 0.832952
+  2007/9/2 0:00 0.834272
+  2007/9/3 0:00 0.836890
+  2007/9/4 0:00 0.833750
+  2007/9/5 0:00 0.829703
+  2007/9/6 0:00 0.820883
+  2007/9/7 0:00 0.816593
+  2007/9/8 0:00 0.819538
+  2007/9/9 0:00 0.819538
+ 2007/9/10 0:00 0.818599
+ 2007/9/11 0:00 0.819236
+ 2007/9/12 0:00 0.813074
+ 2007/9/13 0:00 0.811754
+ 2007/9/14 0:00 0.815328
+ 2007/9/15 0:00 0.813041
+ 2007/9/16 0:00 0.813041
+ 2007/9/17 0:00 0.818297
+ 2007/9/18 0:00 0.824640
+ 2007/9/19 0:00 0.817261
+ 2007/9/20 0:00 0.820647
+ 2007/9/21 0:00 0.827335
+ 2007/9/22 0:00 0.828466
+ 2007/9/23 0:00 0.828466
+ 2007/9/24 0:00 0.826856
+ 2007/9/25 0:00 0.831843
+ 2007/9/26 0:00 0.822470
+ 2007/9/27 0:00 0.823452
+ 2007/9/28 0:00 0.825900
+ 2007/9/29 0:00 0.826754
+ 2007/9/30 0:00 0.826754
+ 2007/10/1 0:00 0.826549
+ 2007/10/2 0:00 0.824606
+ 2007/10/3 0:00 0.822538
+ 2007/10/4 0:00 0.817461
+ 2007/10/5 0:00 0.821355
+ 2007/10/6 0:00 0.820951
+ 2007/10/7 0:00 0.820951
+ 2007/10/8 0:00 0.821220
+ 2007/10/9 0:00 0.818565
+2007/10/10 0:00 0.818331
+2007/10/11 0:00 0.815760
+2007/10/12 0:00 0.818130
+2007/10/13 0:00 0.814764
+2007/10/14 0:00 0.814764
+2007/10/15 0:00 0.821288
+2007/10/16 0:00 0.823249
+2007/10/17 0:00 0.822233
+2007/10/18 0:00 0.820244
+2007/10/19 0:00 0.829531
+2007/10/20 0:00 0.827438
+
+**Statistical Summary (Feature Extraction):**
+- Target OT: {"mean": 0.8271507291666668, "std": 0.008631402826886406, "min": 0.811754, "max": 0.851716, "median": 0.826754, "trend_slope": -0.0001859018990775899, "daily_std_24h": 0.005774992760000554, "lag1_corr": 0.8985548583835945, "mean_abs_change": 0.0027874105263157875, "std_change": 0.003908269679975109}
+
+**Task:**
+Based on the historical data above,
+Before forecasting, briefly analyze the experiences and insights from the similar examples above, then produce your forecast., please forecast the target variable (OT) for the next 192 recorded hours. Please note that some data may contain missing values, so handle them carefully. Please provide the complete forecast for the next 192 hours, remember to give me the complete data. You must provide the complete data.You mustn't omit any content.You are not allowed to train any model or call/use any other model, tool, or external resource. You must rely only on your own internal knowledge and logical reasoning to produce the forecastAnd your final answer must follow the format
+    <answer>
+        
+```
+
+        ...
+        
+```
+
+        </answer>
+    Please obey the format strictly. And you must give me the complete answer.
+    

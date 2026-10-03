@@ -1,0 +1,125 @@
+Here are some similar examples from the training set to help you understand the task:
+
+
+Based on these examples, please solve the following similar task:
+
+You are an expert in time series forecasting.
+ The dataset is ETTh1 (Electricity Transformer Temperature Hourly) and contains hourly records of transformer oil temperature (target) and load-related covariates (HUFL, HULL, MUFL, MULL, LUFL, LULL).
+
+**Target Variable to Forecast:**
+Here is the historical data of Oil Temperature (transformer oil temperature, prediction target) (the variable you need to forecast) for the past 96 recorded hours:
+               date     OT
+2018-11-26 21:00:00 3402.0
+2018-11-26 22:00:00 3218.0
+2018-11-26 23:00:00 3006.0
+2018-11-27 00:00:00 2900.0
+2018-11-27 01:00:00 2766.0
+2018-11-27 02:00:00 2704.0
+2018-11-27 03:00:00 2662.0
+2018-11-27 04:00:00 2704.0
+2018-11-27 05:00:00 2596.0
+2018-11-27 06:00:00 2525.0
+2018-11-27 07:00:00 2568.0
+2018-11-27 08:00:00 2511.0
+2018-11-27 09:00:00 2798.0
+2018-11-27 10:00:00 3069.0
+2018-11-27 11:00:00 3217.0
+2018-11-27 12:00:00 3214.0
+2018-11-27 13:00:00 3397.0
+2018-11-27 14:00:00 3438.0
+2018-11-27 15:00:00 3350.0
+2018-11-27 16:00:00 3489.0
+2018-11-27 17:00:00 3540.0
+2018-11-27 18:00:00 3875.0
+2018-11-27 19:00:00 3743.0
+2018-11-27 20:00:00 3569.0
+2018-11-27 21:00:00 3395.0
+2018-11-27 22:00:00 3316.0
+2018-11-27 23:00:00 3251.0
+2018-11-28 00:00:00 3081.0
+2018-11-28 01:00:00 2827.0
+2018-11-28 02:00:00 2838.0
+2018-11-28 03:00:00 2819.0
+2018-11-28 04:00:00 2816.0
+2018-11-28 05:00:00 2777.0
+2018-11-28 06:00:00 2705.0
+2018-11-28 07:00:00 2643.0
+2018-11-28 08:00:00 2598.0
+2018-11-28 09:00:00 2749.0
+2018-11-28 10:00:00 3197.0
+2018-11-28 11:00:00 3559.0
+2018-11-28 12:00:00 3560.0
+2018-11-28 13:00:00 3755.0
+2018-11-28 14:00:00 3881.0
+2018-11-28 15:00:00 3671.0
+2018-11-28 16:00:00 3744.0
+2018-11-28 17:00:00 3694.0
+2018-11-28 18:00:00 3961.0
+2018-11-28 19:00:00 3989.0
+2018-11-28 20:00:00 3783.0
+2018-11-28 21:00:00 3505.0
+2018-11-28 22:00:00 3217.0
+2018-11-28 23:00:00 2962.0
+2018-11-29 00:00:00 2955.0
+2018-11-29 01:00:00 2789.0
+2018-11-29 02:00:00 2787.0
+2018-11-29 03:00:00 2803.0
+2018-11-29 04:00:00 2756.0
+2018-11-29 05:00:00 2685.0
+2018-11-29 06:00:00 2643.0
+2018-11-29 07:00:00 2498.0
+2018-11-29 08:00:00 2452.0
+2018-11-29 09:00:00 2552.0
+2018-11-29 10:00:00 2874.0
+2018-11-29 11:00:00 2985.0
+2018-11-29 12:00:00 3131.0
+2018-11-29 13:00:00 3267.0
+2018-11-29 14:00:00 3592.0
+2018-11-29 15:00:00 3656.0
+2018-11-29 16:00:00 3507.0
+2018-11-29 17:00:00 3657.0
+2018-11-29 18:00:00 3751.0
+2018-11-29 19:00:00 3774.0
+2018-11-29 20:00:00 3548.0
+2018-11-29 21:00:00 3457.0
+2018-11-29 22:00:00 3210.0
+2018-11-29 23:00:00 3011.0
+2018-11-30 00:00:00 2875.0
+2018-11-30 01:00:00 2815.0
+2018-11-30 02:00:00 2837.0
+2018-11-30 03:00:00 2658.0
+2018-11-30 04:00:00 2574.0
+2018-11-30 05:00:00 2409.0
+2018-11-30 06:00:00 2421.0
+2018-11-30 07:00:00 2419.0
+2018-11-30 08:00:00 2458.0
+2018-11-30 09:00:00 2443.0
+2018-11-30 10:00:00 2704.0
+2018-11-30 11:00:00 2767.0
+2018-11-30 12:00:00 2840.0
+2018-11-30 13:00:00 2926.0
+2018-11-30 14:00:00 3101.0
+2018-11-30 15:00:00 3142.0
+2018-11-30 16:00:00 3191.0
+2018-11-30 17:00:00 3179.0
+2018-11-30 18:00:00 3169.0
+2018-11-30 19:00:00 3103.0
+2018-11-30 20:00:00 3014.0
+
+**Statistical Summary (Feature Extraction):**
+- Target OT: {"mean": 3082.6979166666665, "std": 427.30327149343594, "min": 2409.0, "max": 3989.0, "median": 3012.5, "trend_slope": -1.4376492132392882, "daily_std_24h": 396.8119070683484, "lag1_corr": 0.9353994504328912, "mean_abs_change": 120.08421052631579, "std_change": 154.165370072659}
+
+**Task:**
+Based on the historical data above,
+Before forecasting, briefly analyze the experiences and insights from the similar examples above, then produce your forecast., please forecast the target variable (OT) for the next 720 recorded hours. Please note that some data may contain missing values, so handle them carefully. Please provide the complete forecast for the next 720 hours, remember to give me the complete data. You must provide the complete data.You mustn't omit any content.You are not allowed to train any model or call/use any other model, tool, or external resource. You must rely only on your own internal knowledge and logical reasoning to produce the forecastAnd your final answer must follow the format
+    <answer>
+        
+```
+
+        ...
+        
+```
+
+        </answer>
+    Please obey the format strictly. And you must give me the complete answer.
+    
