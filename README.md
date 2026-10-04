@@ -6,7 +6,6 @@
 | PatchTST    | /Time-Series-Library/models/PatchTST.py     |
 | iTransforme | /Time-Series-Library/models/iTransformer.py |
 | TimeMixer   | /Time-Series-Library/models/iTransformer.py |
-| RAFT        | /RAFT/models/RAFT.py                        |
 
 The pre-trained checkpoints and baseline model weights are available on [Hugging Face](https://huggingface.co/lzm666666/baseline-checkpoints).
 
